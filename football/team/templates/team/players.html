@@ -1,0 +1,144 @@
+{%  extends 'team/basic.html'  %}
+
+{% block title  %}
+Игроки
+{% endblock %}
+
+
+{% block content %}
+    <div >
+        <h1 class="title__title">
+            Біографії
+        </h1>
+    </div>
+    {% for el in models %}
+        <!-- {{ el.name }} -->
+
+    
+    <div class="info__wrapper__player">
+        <div>
+            
+        </div>
+        <div class="info__player">
+            <h1>
+                <!-- Кріштіану Роналду -->
+                {{ el.name }}
+            </h1>
+            <p>
+                Дата народження: {{ el.date_of_birth }}
+            </p>
+            <p>
+                Команда: {{ el.Comand }}
+            </p>
+            <!-- {% if  el.images %} -->
+                <img src="{{ el.images }}" alt="" >
+            <!-- {% endif %} -->
+
+
+
+            <!-- <div class="line__static line__fotball">
+                   /static/assets/img/1.png
+            </div> -->
+            
+        </div>
+        <div class="statistic__info">
+               <div class="statistic__info__section static__section">
+                   <h1>
+                        Місце 
+                   </h1>
+                   <p>
+                        Місце нарродження:  {{ el.place_of_birth }}
+                   </p>
+                        
+                   <p>
+                    Місце проживання: {{ el.place_now }}
+                   </p>
+               </div>
+               <div class="line__static">
+                   
+               </div>
+               <div class="statistic__info__section ">
+                   <h1>
+                        Характеристика
+                   </h1>
+                   <p>
+                        Ріст: {{ el.growth }}
+                   </p>
+                   <p>
+                        Номер: {{ el.number }}
+                   </p>
+                   <p>
+                        Почав грати: {{ el.started_playing }}
+                   </p>
+               </div>
+               <div class="line__static">
+                   
+               </div>
+               <div class="statistic__info__section static__section">
+                   <h1>
+                        Статичні характеристики гравця
+                   </h1>
+                   <p>
+                        Забиті голи: {{ el.goals_scored }}
+                   </p>
+                   <p>
+                        Передачі головою: {{ el.transfer_head }}
+                   </p>
+                   <p>
+                        Автоголи: {{ el.own_goals }}
+                   </p>
+                   <p>
+                        Жовті карточки: {{ el.yellow_cards }}
+                   </p>
+                   <p>
+                        Червоні карточки: {{ el.red_cards }}
+                   </p>
+                   <p>
+                        Голи з пенальті: {{ el.goals_from_the_penalty_spot }}
+                   </p>
+                   <p>
+                     Середній час на полі: {{ el.average_time_on_the_field }}
+                    </p>
+               </div>
+               <div class="line__static">
+                   
+               </div>
+               <!-- <div class="statistic__info__section static__section">
+                   <h1>
+                        Статистика
+                   </h1>
+                   <p>
+                        Середній час на полі
+                   </p>
+                   <p>
+                        Кількість зіграних ігор
+                   </p>
+                   <p>
+                        Вийшов на заміну
+                   </p>
+                   <p>
+                        Кількість замін
+                   </p>
+               </div> -->
+               <!-- <div class="line__static">
+                   
+               </div> -->
+               <div class="statistic__info__section ">
+                <h1>
+                     Інтересні факти
+                </h1>
+                <p>
+                     Факти: 
+                     <ol>
+                         {{ el.facts }}
+                     </ol>
+                </p>
+            </div>
+        </div>
+        
+        
+    </div>
+    {% endfor %}
+   
+
+{% endblock %}

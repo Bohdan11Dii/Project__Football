@@ -1,0 +1,44 @@
+{%  extends 'team/basic.html'  %}
+{% load static %}
+{% block title  %}
+Головна
+
+{% endblock %}
+
+
+{% block content %}
+
+<section class="block_title">
+    <div class="container text__alight ">
+        <div class="real__wrapper">
+                <h1 class="real__title">
+                    Real Madrid
+                </h1>
+            
+            <div>
+                <p class="real__subtitle">
+                    Official fan site
+                </p>
+            </div>
+                <div class="button__wrapper">
+                    <a href="{% url 'players'%}" class="button__a">
+                        <button class="button">
+                            Игроки
+                        </button>
+                    </a>
+                    <a href="" class="button__a btn__2">
+                        <button class="button">
+                            Блог
+                        </button>
+                    </a>
+                    <a href="/gallery" class="button__a btn__3">
+                        <button class="button">
+                            Галерея
+                        </button>
+                    </a>
+                </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
