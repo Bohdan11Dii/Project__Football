@@ -6,5 +6,89 @@
 
 
 {% block content %}
-    <h1>Контакты</h1>
+        <section class="contact">
+            <h1 class="contact__title">
+                Контакти
+            </h1>
+            <div class="contact__block">
+                <div class="contact__info">
+                    <div class="contacr__info__wrapper">
+                        <h3 class="contact__h3">
+                            Адреса:
+                        </h3>
+                        <p class="contact__p_1">
+                            «Сантьяго Бернабеу»
+                        </p>
+                    </div>
+                    <div class="contacr__info__wrapper">
+                        <h3 class="contact__h3">
+                            Президент
+                        </h3>
+                        <p class="contact__p_1">
+                            Флорентино Перес
+                        </p>
+                    </div>
+                    <div class="contacr__info__wrapper">
+                        <h3 class="contact__h3">
+                            Головний тренер
+                        </h3>
+                        <p class="contact__p_1">
+                            Карло Анчелотти
+                        </p>
+                    </div>
+                    <div class="contacr__info__wrapper">
+                        <h3 class="contact__h3">
+                            Сайт:
+                        </h3>
+                        <a href="https://www.realmadrid.com/en" >
+                            <p class="contact__p">
+                                realmadrid.com
+                            </p>
+                        </a>
+                    </div>
+                    <div class="contacr__info__wrapper">
+                        <h3 class="contact__h3">
+                            Спонсор:
+                        </h3>
+                        <a  href="https://ru.wikipedia.org/wiki/Emirates_(%D0%B0%D0%B2%D0%B8%D0%B0%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D1%8F)">
+                            <p class="contact__p">
+                                Fly Emirates
+                            </p>
+                        </a>
+                    </div>
+                    
+                </div>
+                <div class="contact__form">
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="contact__form__block">
+                            <p class="contanct__name">
+                                Ім'я
+                            </p>
+                            <input name="name" type="text" class="input" required>
+                        </div>
+                        <div class="contact__form__block">
+                            <p class="contanct__name">
+                                E-mail
+                            </p>
+                            <input name="email" type="text" class="input" required>
+                        </div>
+                        <div class="contact__form__block">
+                            <p class="contanct__name">
+                                Повідомлення
+                            </p>
+                            <textarea name="subject" type="text" class="input__textarea input" placeholder="Пишіть тут..." value="" required></textarea>
+                        </div>
+                        <div class="button__submit">
+                            <button class="submit">
+                                Відправити
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <script>
+            console.log(document.getElementsByClassName('input__textarea')[0].value)
+        </script>
 {% endblock %}
