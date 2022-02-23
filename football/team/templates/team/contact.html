@@ -8,7 +8,7 @@
 {% block content %}
         <section class="contact">
             <h1 class="contact__title">
-                Контакти
+                КОНТАКТИ
             </h1>
             <div class="contact__block">
                 <div class="contact__info">
@@ -61,24 +61,46 @@
                 <div class="contact__form">
                     <form method="post">
                         {% csrf_token %}
+
+
+                        
+           
                         <div class="contact__form__block">
                             <p class="contanct__name">
                                 Ім'я
                             </p>
-                            <input name="name" type="text" class="input" required>
+                            <input 
+                                name="name" 
+                                type="text" 
+                                class="input" 
+                                required
+                            >
                         </div>
                         <div class="contact__form__block">
                             <p class="contanct__name">
                                 E-mail
                             </p>
-                            <input name="email" type="text" class="input" required>
+                            <input 
+                                name="email" 
+                                type="email" 
+                                class="input" 
+                                required
+                                >
                         </div>
                         <div class="contact__form__block">
                             <p class="contanct__name">
                                 Повідомлення
                             </p>
-                            <textarea name="subject" type="text" class="input__textarea input" placeholder="Пишіть тут..." value="" required></textarea>
+                            <textarea 
+                                name="subject" 
+                                type="text" 
+                                class="input__textarea input" 
+                                placeholder="Пишіть тут..." 
+                                value="" 
+                                required
+                            ></textarea>
                         </div>
+                        
                         <div class="button__submit">
                             <button class="submit">
                                 Відправити
@@ -88,7 +110,22 @@
                 </div>
             </div>
         </section>
-        <script>
-            console.log(document.getElementsByClassName('input__textarea')[0].value)
+        <!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
+        <script src="/static/assets/js/script.js"></script>
+        <!-- <script src="sweetalert2.all.min.js"></script> -->
+        
+        {% for msg in messages %}<script>
+           
+            Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    background: '#343539',
+                    color: '#fff',
+                    title: 'Ваше повідомлення відправлено',
+                    button: "Aww yiss!",
+                    })
+                            
+            
         </script>
+        {% endfor %}
 {% endblock %}

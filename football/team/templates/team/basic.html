@@ -10,7 +10,7 @@
         {% endblock %}
     </title>
     <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
-
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/img/ball.ico' %}">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,39 +20,55 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@1,300&display=swap" rel="stylesheet">
 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Redressed&display=swap" rel="stylesheet">
+
+
 </head>
 <body>
     <header class="header">
         <div class="container header__flex">
-            <div>
-                <img src="" alt="">
+
+            <div class="Your__account">
+                <a href="{% url 'basic'%}">
+                    <p >{{ user.username }}</p>
+                </a>
+           
             </div>
             <nav class="nav">
                 <ul>
                     <li class="nav__li">
-                        <a class="nav__link" href="{% url 'home'%}">
-                            Головна/
+                        <a class="nav__link" href="{% url 'first'%}">
+                            Головна
                         </a>
                     </li>
                     <li  class="nav__li">
                         <a class="nav__link " href="{% url 'players'%}">
-                            Ігроки/
+                            Гравці
                         </a>
                     </li>
                     <li  class="nav__li">
-                        <a class="nav__link" href="/gallery">
-                            Галерея/
+                        <a class="nav__link" href="{% url 'gallery'%}">
+                            Галерея
                         </a>
                     </li>
                     <li class="nav__li">
-                        <a class="nav__link" href="/contact">
-                            Контакти/
+                        <a class="nav__link" href="{% url 'contact'%}">
+                            Контакти
                         </a>
                     </li>
                     <li class="nav__li">
-                        <a class="nav__link" href="/bloh">
-                            Блог/
+                        <a class="nav__link" href="{% url 'bloh'%}">
+                            Новини
                         </a>
+                    </li>
+                    <li class="nav__li logout__content">
+               
+                            <a class="nav__link logout" href="{% url 'logout' %}">
+                                Вийти
+                            </a>
+      
+                           
                     </li>
                 </ul>
             </nav>
@@ -60,8 +76,22 @@
     </header>
 
     {% block content %}
+    <div class="photos__img__basic">
+        
+    </div>
+        <!-- <img class="photos__img__basic " src=""/> -->
     {% endblock %}
 
+   <script>
+     
+       const links = document.getElementsByClassName('nav__link')
+       for (link of links){
+           if(link.getAttribute('href') === window.location.pathname){
+               link.style.color = '#E9C15F'
+           }
+       }
+   </script>
+ 
 
 </body>
 </html>

@@ -5,45 +5,51 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Логін</title>
+    <title>Реєстрація</title>
     <link rel="icon" href="{% static 'assets/img/ball.ico' %}">
     <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 <body class="img__body">
-    <div id="login-button">
+    <!-- <div id="login-button">
         <img  src="https://dqcgrsy5v35b9.cloudfront.net/cruiseplanner/assets/img/icons/login-w-icon.png">
         </img>
-      </div>
-      <div id="container" class="forget__container">
-        <h1 class="log__in">Логін</h1>
-        <div>
-          
+    </div> -->
+      <div id="container" class="container__cont">
+        <h1 class="log__in">Реєстрація</h1>
         <span class="close-btn">
           <img src="https://cdn4.iconfinder.com/data/icons/miu/22/circle_close_delete_-128.png"></img>
-        </span> 
-      <!-- ТУТ ПОИІНЯВ НА FIRST -->
-        <form method="post" action="{% url 'login' %}">
+        </span>
+      
+        <form method="POST" action="{% url 'register' %}">
             {% csrf_token %}
             <input type="text" name="username" placeholder="Enter Username" required="">
-            <input type="password" name="password" placeholder="Enter Username" required="">
-          <button class="a__log" type="submit" class="orange-btn">Увійти</button>
-          <a href="{% url 'registerform' %}" class="registerform" >Зареєструватись</a>
-        </form>
-        <div class="form-group">
-          {% if messages  %}
-          <div class="messages">
+            <input type="email" name="email" placeholder="Enter Email" required="">
+            <input type="password" name="password" placeholder="Enter Password" required="">
+        
+            <input type="submit" class="a__log" name="submit" value="Register">
+            <a href="{% url 'loginform' %}" class="loginforms " >Увійти</a>
+               <div class="form-group">
+            {% if messages %}
+            <div class="messages">
                 {% for message in messages %}
 
-                    <div class="alert alert-success" style="color:red; font-size: 40px;"> {{ message }}</div>
+                    <div class="alert alert-success" style="color:green;"> {{ message }}</div>
 
                 {% endfor %}
-          </div>
-          {% endif %}
-        </div>
+            </div>
+            {% endif %}
+        </form>
+      </div>
+      
+
+      
+      
+       
       </div>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
       <script src="/static/assets/js/login.js"></script>
       
 </body>
 </html>
+
